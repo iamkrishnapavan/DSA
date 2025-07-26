@@ -5,6 +5,10 @@
     because we are checking a[mid] == ele if not only other will execute.
 
     EX :- [1, 0, 1, 1, 1], ele = 0
+    TIME COM[LEXITY
+    =================
+    O(log2n)-> Average
+    O(n/2) -> Worst([3,3,3,3,3,1,3,3,3,3,3,3] we will decresase space search until a[l] != a[mid] != a[h]
  */
 class Solution {
     public boolean bSearch(int[] a, int l, int h, int x){
