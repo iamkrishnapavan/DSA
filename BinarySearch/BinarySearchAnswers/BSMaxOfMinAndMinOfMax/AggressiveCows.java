@@ -1,5 +1,8 @@
 /*
     PATTERN : Binary Search Max(min) or Min(max)
+    TIME COMPLEXITY
+    ===============
+    O(N log N + N log (max(arr) - min(arr))
 
     KEY POINTS
     ==========
