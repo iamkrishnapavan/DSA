@@ -1,3 +1,6 @@
+/*
+    Since we need middle elements we will split the array so that both array elements equal to half size
+ */
 class MedianOfSortedArr {
     public double findMedianSortedArrays(int[] a, int[] b) {
         int n1 = a.length, n2 = b.length;
