@@ -1,0 +1,50 @@
+Recursion
+===========
+We can solve problems which are solved by backtracking.
+But recursion is not efficient because we are generating new objects for each call and such object creation takes more time
+We can do pruning in recursion also.
+Backtracking
+==============
+Backtracking is efficient because we pass mutable object and we simply add and perform call and then remove.
+
+
+public class BinaryStringsNoConsec1 {
+    public static List<String> fun(int n, String s){
+        List<String> list = new ArrayList<>();
+        if(s.length() == n){
+            list.add(s);
+            return list;
+        }
+        list.addAll(fun(n, s + '0'));
+        if(s.length() == 0 || s.charAt(s.length() -1) != '1'){
+            list.addAll(fun(n, s + '1'));
+        }
+        return list;
+    }
+    public static List< String > generateString(int N) {
+        return fun(N, "");
+    }
+}
+
+
+// Backtracking
+public class Backtracking {
+    public static void backtrack(int n, StringBuilder sb, List<String> res) {
+        if (sb.length() == n) {
+            res.add(sb.toString());
+            return;
+        }
+
+        // Always try to add '0'
+        sb.append('0');
+        backtrack(n, sb, res);
+        sb.deleteCharAt(sb.length() - 1);  // backtrack
+
+        // Try to add '1' only if last char is not '1'
+        if (sb.length() == 0 || sb.charAt(sb.length() - 1) != '1') {
+            sb.append('1');
+            backtrack(n, sb, res);
+            sb.deleteCharAt(sb.length() - 1);  // backtrack
+        }
+    }
+
